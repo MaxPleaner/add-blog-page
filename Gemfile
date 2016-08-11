@@ -46,3 +46,17 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# silence annoying warnings
+# ENV['RUBY_DEP_GEM_SILENCE_WARNINGS'] = '1'
+
+# debugging
+gem "byebug"
+
+# preprocessing
+gem "slim"
+gem "sass"
+gem "coffee-script"
+gem "therubyracer"
+gem "redcarpet"
+

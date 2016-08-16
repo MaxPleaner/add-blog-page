@@ -1,0 +1,41 @@
+div#sites-index
+  - @sites.each do |site|
+    = raw site.to_html
+
+div#script-creator
+
+  form#new-site-data-script-form action="/script-creator" method="GET"
+    = raw form_token
+    input name="name" placeholder="name"
+    br
+    textarea name="data-script" placeholder="data script. ensure that @data gets defined"
+    br
+    input type="submit" value="submit"
+  br
+  
+  div#data-scripts
+    = @data_scripts
+
+  div#data-script
+    = @data_script
+
+  div#page-scripts
+    = @page_scripts
+
+  form#new-site-pages-script action="/script-creator" method="GET"
+    = raw form_token
+    input name="name" placeholder="name"
+    br
+    textarea name="pages-script" placeholder="pages script. Define @pages as an array of hashes with signature: { name: "string", content: ".md.erb string", tags: ["array of strings"] }
+    br
+    input type="submit" value="submit"
+  br
+
+  form#arbitrary-script action="/script-creator" method="GET"
+    = raw form_token
+    input name="name" placeholder="name"
+    br
+    textarea name="arbitrary-script" placeholder="arbitrary script"
+    br
+    input type="submit" value="submit"
+  br
